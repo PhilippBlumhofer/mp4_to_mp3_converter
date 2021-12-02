@@ -9,7 +9,7 @@ PATH = ''  # change to folder with video files you want to convert
 DESTINATION = ''  # change to destination folder for mp3 files
 
 
-def convert(video, destination_path):
+def convert(video: str, destination_path: str):
     destination_path = destination_path + os.path.splitext(os.path.basename(video))[0] + '.mp3'
     conv_process = (
         ffmpeg
@@ -22,13 +22,18 @@ def convert(video, destination_path):
     return conv_process
 
 
-if __name__ == "__main__":
+def main():
     path = PATH  # path to read files from
     destination = DESTINATION  # destination for converted files
-    files = [f for f in glob.glob(path + "**/*.mp4", recursive=True)]  # read all mp4 files in dir and recursive folders
+    # read all mp4 files in dir and recursive folders
+    files = list(glob.glob(path + "**/*.mp4", recursive=True))
     return_processes = []
     for file in files:  # loop through all files
         return_processes.append(convert(file, destination))  # convert file
     for process in return_processes:
         process.communicate()
     print('completed')
+
+
+if __name__ == "__main__":
+    main()
