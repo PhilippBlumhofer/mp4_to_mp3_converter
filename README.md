@@ -1,5 +1,6 @@
 # mp4_to_mp3_converter
-Simple converter to extract audio (mp3) from video files (mp4) using [ffmpeg-python](https://github.com/kkroening/ffmpeg-python)
+Simple converter to extract audio (mp3) from video files (mp4) using [ffmpeg-python](https://github.com/kkroening/ffmpeg-python).
+
 ffmpeg has to be installed on the PC. It can be found [here](http://ffmpeg.org/).
 
 For the installation of ffmpeg-python:
